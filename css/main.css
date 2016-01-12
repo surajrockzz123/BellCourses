@@ -1,0 +1,35 @@
+
+        body {background: antiqueblue;} 
+        h1 {color: silver; text-align: center;background-color: grey}
+        section {float: right;width: 350px;padding-right: 300px}
+
+header { background;color:}
+nav ul li{display: inline;padding: 10px 25px 10px 25px; background-color: antiquewhite}
+#nav1 {background-color:beige;padding:10px 25px 10px 25px;width: 60px}
+#login {
+    position: absolute;
+    top:30%;
+    left:40%;
+}
+#register {
+    position: absolute;
+    top:30%;
+    left:30%;}
+#contactus{
+     position: absolute;
+    top:50%;
+    left:40%;}
+#img1 {position: absolute;
+    top: 40%;
+    left: 20%;}
+#img2 {position: absolute;
+    top: 40%;
+    left: 50%;}
+#img3 {position: absolute;
+    top: 80%;
+    left: 20%;}
+#img4 {position: absolute;
+    top: 80%;
+    left: 50%;}
+#h2{text-align:center;
+background-color:grey;color:silver}
