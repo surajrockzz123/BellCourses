@@ -7,7 +7,7 @@
         <style>
             table {background-color:lightgray;}
             h1 {color:firebrick;}
-            #butt{color:aqua}
+            #a{position:absolute;left:40px}
         </style>
         <h1 align="center"> My Calculator</h1>
     </head>
@@ -15,18 +15,21 @@
         <form name="cal">
         <table align="center">
             <tr>
-                <td>A:<br><input type="text" name="first" style="width :50px" /> </td>
-        <!--        <td><input type="text" name="oper" style="width :20px" /> </td> 
-                <td>B:<br><input type="text" name="second" style="width :40px"/> </td>-->
-                <td>Result:<br> <input type="text" name="result" style="width :50px"/> </td>
+                <td>A:<br><input type="text" name="first" id="first" style="width :50px" readonly/> </td>
+                <td><br><input type="text" name="oper" style="width :20px" readonly/> </td> 
+                <td>B:<br><input type="text" name="second" style="width :50px" readonly/> </td>
+                <!--<td><br><input type="text" name="equal" style="width :20px" readonly/> </td> -->
+                <td>Result:<br> <input type="text" name="result" id="result" style="width :70px" readonly/> </td>
             </tr>
             <tr align="left">
                 <td colspan="2" >
-                    <input type="Reset" value="Clear" style="width :60px" ></td>
-             <!--  <td colspan="2">
-                    <input type="button" value="Clrres" style="width :60px" onClick="clearres()"></td>
-                 <td colspan="2">
-                    <input type="button" value="ClrAll" style="width 50px"></td>  -->
+                    <input type="button" value="clrA" style="width :60px" onClick="clrA()"></td>
+                <td colspan="2" >
+                    <input type="button" value="clrB" style="width :60px" onClick="clrB()"></td>
+                <td colspan="2">
+                   <input type="button" value="clrRes" style="width :60px" onClick="clrRes()"></td>
+                <td colspan="2">
+                    <input type="button" value="clrAll" style="width 60px" onClick="clrAll()"></td>  
             </tr>
             <div id="butt">
             <tr>
@@ -107,14 +110,30 @@
                     var output=eval(document.cal.first.value)
                     document.cal.result.value=output;
                 }
-          /* function clearA()
+           function clrA()
             {
-                document.cal.ClrA.value= "";
+                document.getElementById("first").value="";
             }
-            function clearres()
+            function clrB()
             {
-                document.cal.Clrres="";
-            }*/ 
+                document.getElementById("second").value="";
+            }
+            function clrRes()
+            {
+                document.getElementById("result").value="";
+            }
+            function clrAll()
+            {
+                document.getElementById("first").value="";
+                //document.getElementById("second").value="";
+                document.getElementById("result").value="";
+                
+                
+                //clrA()
+                //clrB()
+                //clrRes()
+                //document.getElementById("oper").innerHTML="";
+            }
             
         </script>
     </body>

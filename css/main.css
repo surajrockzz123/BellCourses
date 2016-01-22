@@ -4,16 +4,16 @@
         section {float: right;width: 350px;padding-right: 300px}
 
 header { background;color:}
-nav ul li{display: inline;padding: 10px 25px 10px 25px; background-color: antiquewhite}
-#nav1 {background-color:navajowhite;padding:10px 25px 10px 25px;width: 150px;font-style: oblique;color:cornflowerblue}
+nav ul li{display: inline;padding: 10px 25px 10px 25px; background-color: antiquewhite;font-size:18px}
+#nav1 {background-color:navajowhite;padding:10px 25px 10px 25px;width: 150px;font-style: oblique;color:cornflowerblue;font-size:18px}
 #login {
     position: absolute;
-    top:30%;
+    top:40%;
     left:40%;
 }
 #register {
     position: absolute;
-    top:30%;
+    top:40%;
     left:30%;}
 #contactus{
      position: absolute;

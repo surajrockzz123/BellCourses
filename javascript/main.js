@@ -1,0 +1,1 @@
+window.alert("From main.js");

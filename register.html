@@ -10,9 +10,55 @@
     </head>
     <body>
         <h1>Bell Courses</h1>
-   
-    <header>
-    </header>
+        <p id="message"></p>
+        <script>
+function myFunction() {
+    var message, x,y,a,b,c,d,em;
+    message = document.getElementById("message");
+    message.innerHTML = "";
+    x = document.getElementById("fname").value;
+    y = document.getElementById("lname").value;
+    a = document.getElementById("uid").value;
+    b = document.getElementById("ed").value;
+    c = document.getElementById("pwd").value;
+    d = document.getElementById("cpwd").value;
+    em=new RegExp("^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$");
+    try { 
+        if(x == ""||y == ""||a == ""||b == ""||c == ""||d == "") 
+        {
+            alert( "All Fields are mandatory");
+        }
+        if(!isNaN(x) && x.length>0) 
+        {
+            alert("Enter valid Firstname");
+        }
+        if(!isNaN(y) && y.length>0) 
+        {
+            alert("Enter valid Lastname");
+        }
+        if(a.length<6 && a.length>0)
+        {
+            alert("User ID should have length greater than 6 characters");
+        }
+        if(c.length<6 && c.length != 0)
+        {
+            alert("Password should have length greater than 6 characters");
+        }
+        if(c.length >= 6 && d != c )
+        {
+            alert("Enter confirm password same as password");
+        }
+        if(em != b && em.length>0)
+        {
+            alert("Invalid Email");
+        }
+    }
+            catch(err) 
+    {
+       alert("Input is " + err);
+    }
+}
+</script>
     <nav align="center">
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -27,9 +73,9 @@
             
         </ul>
         </nav>
-    <br><br>
-        
+        <h2 id="h2"> Registration </h2>
         <nav id="nav1">
+            <a><b><u>Courses Offered</u></b></a><br><br>
             <a href="http://www.w3schools.com/html/default.asp">HTML</a><br><br>
             <a href="http://www.w3schools.com/css/default.asp">CSS</a><br><br>
             <a href="http://www.w3schools.com/js/default.asp">Javascript</a><br><br>
@@ -45,28 +91,33 @@
                 <fieldset>
 				<table align="center" width="100%">
 				<tr>
-				    <td>Name</td>
-				    <td><input type="text" name="name" maxlength="30" /> (max
+				    <td>First Name</td>
+				    <td><input type="text" id="fname" maxlength="30" /> (max
+										30 characters a-z or A-Z)</td>
+				</tr>
+                <tr>
+				    <td>Last Name</td>
+				    <td><input type="text" id="lname" maxlength="30" /> (max
 										30 characters a-z or A-Z)</td>
 				</tr>
 				<tr>
 				    <td>User Id</td>
-				    <td><input type="text" name="uid" maxlength="30" /> (max
+				    <td><input type="text" id="uid" maxlength="30" /> (max
 										30 characters a-z or A-Z or 0-9)</td>
 				</tr>
 				<tr>
                     <td>Email Id</td>
-					<td><input type="text" name="ed" maxlength="30" />
+					<td><input type="text" id="ed" maxlength="30" />
 										(Eg:abc@gmail.com)</td>
 				</tr>
 				<tr>
 					<td>Password</td>
-					<td><input type="password" name="pwd" maxlength="30" />
+					<td><input type="password" id="pwd" maxlength="30" />
 						(max 30 characters a-z or A-Z or 0-9)</td>
 				</tr>
 				<tr>
                     <td>Confirm Password</td>
-					<td><input type="password" name="cpwd" maxlength="30" />
+					<td><input type="password" id="cpwd" maxlength="30" />
 						(max 30 characters a-z or A-Z or 0-9)</td>
                     <tr>
                         <td colspan="2"></td>
@@ -80,7 +131,7 @@
 				</tr>
 				<tr>
 					<td align="center" colspan="2">
-                <input type="submit" value="Submit" onclick="return validate()"/>
+                <input type="submit" value="Submit" onclick="myFunction()"/>
                     </td>
 				</tr>
 			</table>

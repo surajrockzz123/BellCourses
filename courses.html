@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #xyz{display:none} 
+            #add{position:absolute;left: 700px}
+            
+        </style>
+        
+    </head>
+    <body>
+        <form id="xyz">
+            <table align="center">
+                <tr>
+                    <td>Course Name:</td> <td><input type="text" id="cname"/> </td></tr>
+                <tr><td>Duration:</td> <td><input type="text" id="dur"/> </td></tr>
+                <tr><td>Fee:</td> <td><input type="text" id="fee"/> </td></tr>
+                    <tr><td>Level:</td>
+                        <td> 
+                            <select id="level">
+                                <option value=""></option>
+                                <option value="Basic">Basic</option>
+                                <option value="Intermediate">Intermediate</option>
+                                <option value="Advanced">Advanced</option>
+                                <option value="Extreme">Extreme</option>
+                            </select>
+                        </td>       
+                        <tr><td><input type="button" value="save" onclick="output()"/> </td>
+                            <td><input type="reset" value="clear" onclick="clear()"/> </td>
+                        </tr>   
+                </tr>
+            </table>
+        </form>
+    <br><br><br>
+    <div id="add">
+        <input type="button" value="Add Course" onclick="openCourseForm()"  />
+    </div><br><br>
+        <form>
+            <center><table border="3px" id="form" style="position:absolute;">
+                <tr id="p">
+                    <td ><b>Name</b></td>
+                    <td ><b>Duration</b></td>
+                    <td ><b>Fee</b></td>
+                    <td ><b>Level</b></td>    
+                </tr>
+            </table></center>
+        </form>
+    <script>
+        function output()
+        {
+            var res=document.getElementById("form");
+            var x=document.createElement("tr");
+            var a=document.createElement("td");
+            var b=document.createElement("td");
+            var c=document.createElement("td");
+            var d=document.createElement("td");
+            var cname=document.getElementById("cname").value;
+            
+            a.innerHTML='<a href="topics.html?courseName='+cname+'">'+cname+'</a>' 
+            //a.innerHTML=document.getElementById("cname").value;
+            b.innerHTML=document.getElementById("dur").value;
+            c.innerHTML=document.getElementById("fee").value;
+            d.innerHTML=document.getElementById("level").value;
+            
+            x.appendChild(a);
+            x.appendChild(b);
+            x.appendChild(c);
+            x.appendChild(d);
+            
+            res.children[0].appendChild(x);
+            showResults();
+        }
+        function clear()
+        {   
+            document.getElementById("cname").value="";
+            document.getElementById("dur").value="";
+            document.getElementById("fee").value="";
+            document.getElementById("level").value="";
+            
+        }
+        function openCourseForm()
+        {
+            document.getElementById("add").style.display="none";
+            document.getElementById("xyz").style.display="block";
+            document.getElementById("form").style.display="none";
+    
+        }
+        function showResults()
+        {
+            document.getElementById("add").style.display="block";
+            document.getElementById("xyz").style.display="none";
+            document.getElementById("form").style.display="block";
+        }
+    </script>
+    </body>
+</html>
